@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# The TravelGram FrontEnd
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Summary
+If you've ever thought about traveling, you've probably wondered where you should go, what destination is trending, or where your friends are going right? Fear no more, because we've got the site for you! Here we present to you Travelgram! This is hottest site to either check on your friends, plan a nice little honeymoon, or even a weekend away from the kids. Ah, we all need that once in a while. Here you'll be able to post up what's your next dream vacation, and connect to hundreds of people just like you, who are all getting ideas for their next trip, or taking you on the adventure with them! 
 
-## Available Scripts
+## Back-End
 
-In the project directory, you can run:
+### Database/ Collections
 
-### `npm start`
+For our database, we will be giving you the chance to make an account with an encrypted/protected password. You'll be able to create an account and be confident that your data won't be breached by one of those nasty hackers! You can post your dream traveling locations, check out the hotspots, and add a comment to theirs!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This will all be done with the expertise of our backend crew. They will give the user access to be able to add posts,  and comments with something called a many to many relationship! This is what that looks like:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<img src = "images/backendPicture.png" >
 
-### `npm test`
+### Controllers
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We will create controller methods to access the entries from each collection, and have a full CRUD for the database.
 
-### `npm run build`
+### Authentication
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+We will implement authentication to our database to protect are users from experiencing any hackers to enter their account, with the help of JWT!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Front-End
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+We will have our website land on the home screen,and will only be accessible to those who have registered an account with us. We will also implement a NavBar that will allow users to register if they don't have an account, login if they're not already logged in, logout if they do not wish to be logged in, post their next vacations, and finally, see our beautiful site once they are logged in. The feed file will consist of users posts and comments on their dream, current, or their past vacations. It will look something like this:
 
-### `npm run eject`
+<img src = "images/frontendPicture.png" >
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Plan of Action
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+We've broken down our team into three separate groups, frontend, backend, and middleware. Each member will have their own duties, and have the most important duty of helping out their teammates when they're stuck. We are a high functioning team, and emphasize teamwork.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Front-End
+### Alex Barbosa
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### [LinkedIn](https://www.linkedin.com/in/alexbarbosa1/)
+### [GitHub](https://github.com/barboa91)
 
-## Learn More
+## Middle-Ware
+### Brynner Ventura
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### [LinkedIn](https://www.linkedin.com/in/brynner-ventura/)
+### [GitHub](https://github.com/Brynner03)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## GJ Haaland
+### Role
+Back-End
 
-### Code Splitting
+### [LinkedIn](https://www.linkedin.com/in/gj-haaland/)
+### [GitHub](https://github.com/GG-Haaland)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Resources:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### [Lucid ERD Diagram](https://lucid.app/lucidchart/a5f575bf-e4c6-4691-9a52-0da71e0476f3/edit?beaconFlowId=C1B346EEF55AC884&invitationId=inv_fcd2cf41-861a-4d1a-8bb2-d379ad521466&page=0_0#)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
