@@ -71,16 +71,17 @@ const ProfilePage = ({ user, authenticated }) => {
       <div className="container">
         <div className="profile">
           <img className="profile-image" src={user.image} alt="profile-pic" />
-            <Link to="/edit">
-              <button className="btn profile-edit-btn"> Edit Button <BsGearFill /></button>
-            </Link>
+           
           <div className="profile-user-settings">
             <h1 className="profile-user-name"> {user.username} </h1>
+            <Link to="/edit">
+              <button className="btn profile-edit-btn"> Edit Profile <BsGearFill /></button>
+            </Link>
           </div>
           <div className="profile-stats">
             <ul>
               <li>
-                <span className="profile-stat-count">164</span> posts
+                <span className="profile-stat-count"> ♾️ </span> posts
               </li>
               <li>
                 <span className="profile-stat-count">18.8k</span> followers
