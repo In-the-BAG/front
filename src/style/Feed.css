@@ -7,7 +7,7 @@
     align-content: center;
     padding-left: 6em;
     padding-right: 6em;
-
+    
 
 }
 
@@ -35,8 +35,15 @@ img {
     flex-direction: row ;
     font-size: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
     
 }
+
+  .posts-in:hover {
+    transition: .1s;
+    transform: scale(1.005);
+    opacity: 1;
+  }
 
 
 .posts-description{
