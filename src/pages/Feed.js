@@ -1,5 +1,5 @@
 import React, {useEffect, useState } from 'react'
-import { PostEdit, PostGetter, PostDelete, LikePost, LikeGetter  } from '../services/PostServices'
+import { PostEdit, PostGetter, PostDelete, LikePost, LikeGetter, unLikePost  } from '../services/PostServices'
 import { useNavigate } from 'react-router-dom'
 import '../style/Feed.css'
 import Comments from '../components/Comments'
@@ -12,19 +12,23 @@ const Feed = ({user, authenticated}) => {
     const [editpost, editPost] = useState([false,user.id])
     const [editdesc, setDesc] = useState('')
     const [cardFocus,setCardFocus] = useState([false,{}])
-    const [likes, setLikes] = useState([])
+    const [likes, setLikes] = useState([{postid: 'nothing'}])
 
 
 
-    const getLikes = async() =>{
-      
-      const data  = await LikeGetter(user.id)
-    
+    const getLikes = async () => {
+      const data = await LikeGetter(user.id);
 
-        setLikes(data)
-      console.log(data)
+      if (Object.keys(data).length !== 0) {
+        setLikes(data);
+      }
 
-    }
+      console.log(`API CALL HERE`+ data);
+    };
+
+    const isLiked = (post) => {
+      return likes.find((element) => element.postid === post.id);
+    };
 
 
     const updatePost =( post) =>{
@@ -49,6 +53,8 @@ const Feed = ({user, authenticated}) => {
         setDesc(e.target.value)
     }
     const sendit = async(post) =>{
+
+      console.log(`API SEND POST`)
         const sendload = {
            ...post,
             description:editdesc
@@ -65,16 +71,26 @@ const Feed = ({user, authenticated}) => {
         postid:post.id,
         userid:user.id
       }
+
+      // if(likes.find((element) => element.postid === post.id)){
+      //   unLikePost({
+      //     postid:post.id,
+      //     userid:user.id
+      //   })
+      //   return
+
+      // }
       LikePost(likedPost)
     }
 
     useEffect(() => {
         const handlePosts = async () => {
+            console.log(`API GET POSTS`)
             const data = await PostGetter()
             setPosts(data)
         }
         handlePosts()
-       // getLikes()
+        getLikes()
     },[])
 
 
@@ -98,9 +114,15 @@ const Feed = ({user, authenticated}) => {
                 <div className="follow-button-wrap">
                   <div className="follow-button"></div>
                 </div>
-                <div className="like-button-wrap">
+                {isLiked(cardFocus[1]) !== undefined ? (
+              <div className="like-button-wrap">
+                  <div className="liked-button" onClick={()=>handleLike(cardFocus[1])}></div>
+                </div>):
+                
+                
+                (<div className="like-button-wrap">
                   <div className="like-button" onClick={()=>handleLike(cardFocus[1])}></div>
-                </div>
+                </div>)}
                 <div
                   className="edit-button-wrap"
                   onClick={() => updatePost(cardFocus[1])}
@@ -119,17 +141,27 @@ const Feed = ({user, authenticated}) => {
                 <div className="follow-button-wrap2">
                   <div className="follow-button"></div>
                 </div>
-                <div className="like-button-wrap2">
+
+              {isLiked(cardFocus[1]) !== undefined ? (
+              <div className="like-button-wrap2">
+                  <div className="liked-button" onClick={()=>handleLike(cardFocus[1])}></div>
+                </div>):
+                
+                
+                (<div className="like-button-wrap2">
                   <div className="like-button" onClick={()=>handleLike(cardFocus[1])}></div>
-                </div>
+                </div>)}
+
+
+
+
+
               </div>
             )}
           </div>
           <div className='Comment-Section'>
             <span className='Comments'>Comments:</span>
-            <Comments className='bigComm' userid={user.id} postid = {cardFocus[1].id}/>
-
-              </div>
+            <Comments className='bigComm' userid={user.id} postid = {cardFocus[1].id}/>          </div>
           </div>
         ) : (
           <div>
@@ -146,9 +178,15 @@ const Feed = ({user, authenticated}) => {
                     <div className="follow-button-wrap">
                       <div className="follow-button"></div>
                     </div>
-                    <div className="like-button-wrap">
-                      <div className="like-button" onClick={()=>handleLike(post)}></div>
-                    </div>
+                    {isLiked(post) !== undefined ? (
+              <div className="like-button-wrap">
+                  <div className="liked-button" onClick={()=>handleLike(post)}></div>
+                </div>):
+                
+                
+                (<div className="like-button-wrap">
+                  <div className="like-button" onClick={()=>handleLike(post)}></div>
+                </div>)}
                     <div
                       className="edit-button-wrap"
                       onClick={() => updatePost(post)}
@@ -167,9 +205,15 @@ const Feed = ({user, authenticated}) => {
                     <div className="follow-button-wrap2">
                       <div className="follow-button"></div>
                     </div>
-                    <div className="like-button-wrap2">
-                      <div className="like-button"onClick={()=>handleLike(post)}></div>
-                    </div>
+                    {isLiked(post) !== undefined ? (
+              <div className="like-button-wrap2">
+                  <div className="liked-button" onClick={()=>handleLike(post)}></div>
+                </div>):
+                
+                
+                (<div className="like-button-wrap2">
+                  <div className="like-button" onClick={()=>handleLike(post)}></div>
+                </div>)}
                   </div>
                 )}
 

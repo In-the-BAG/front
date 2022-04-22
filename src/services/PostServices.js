@@ -56,6 +56,15 @@ export const LikePost = async (data) =>{
     throw error
   }
 }
+export const unLikePost = async (data) =>{
+  try{
+
+    const res = await Client.delete('/post/unlikepost',data)
+    console.log(res)
+  }catch (error){
+    throw error
+  }
+}
 
 export const LikeGetter = async (data) =>{
   try {

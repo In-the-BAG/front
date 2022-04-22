@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { UserPost, PostEdit, PostDelete,LikePost } from "../services/PostServices";
+import { UserPost, PostEdit, PostDelete,LikePost, LikeGetter } from "../services/PostServices";
 import { useNavigate } from "react-router-dom";
 import Comments from "../components/Comments";
 import "../style/profile.css";
@@ -15,6 +15,25 @@ const ProfilePage = ({ user, authenticated }) => {
   const [editpost, editPost] = useState([false, 1]);
   const [editdesc, setDesc] = useState("");
   const [cardFocus,setCardFocus] = useState([false,{}])
+  const [likes, setLikes] = useState([{postid: 'nothing'}])
+
+
+
+
+
+  const getLikes = async () => {
+    console.log(`API GET LIKES`)
+    const data = await LikeGetter(user.id);
+
+    if (Object.keys(data).length !== 0) {
+      setLikes(data);
+    }
+
+  };
+
+  const isLiked = (post) => {
+    return likes.find((element) => element.postid === post.id);
+  };
 
 
   const navDelete = (post) => {
@@ -22,6 +41,8 @@ const ProfilePage = ({ user, authenticated }) => {
     delPost(post);
   };
   const delPost = async (post) => {
+    console.log(`API DELETE POST`);
+    
     const sendload = {
       ...post,
     };
@@ -38,6 +59,9 @@ const ProfilePage = ({ user, authenticated }) => {
     setDesc(e.target.value);
   };
   const sendit = async (post) => {
+    console.log(`API EDIT POST`);
+
+
     const sendload = {
       ...post,
       description: editdesc,
@@ -60,10 +84,14 @@ const ProfilePage = ({ user, authenticated }) => {
 
   useEffect(() => {
     const handlePosts = async () => {
+    console.log(`API Handle POST`);
+
       const data = await UserPost(user.id);
       setPosts(data);
     };
     handlePosts();
+    getLikes()
+
   }, []);
 
   return user && authenticated && posts ? (
@@ -98,9 +126,6 @@ const ProfilePage = ({ user, authenticated }) => {
               <div className="bio">
               {user.bio}
               </div>
-
-                {console.log('This is the bio' + ' ' + user.bio)}
-        
             </div>
           </div>
         </div>
@@ -124,9 +149,15 @@ const ProfilePage = ({ user, authenticated }) => {
         <div className="follow-button-wrap">
           <div className="follow-button"></div>
         </div>
-        <div className="like-button-wrap">
-          <div className="like-button" onClick={()=>handleLike(cardFocus[1])}></div>
-        </div>
+        {isLiked(cardFocus[1]) !== undefined ? (
+              <div className="like-button-wrap">
+                  <div className="liked-button" onClick={()=>handleLike(cardFocus[1])}></div>
+                </div>):
+                
+                
+                (<div className="like-button-wrap">
+                  <div className="like-button" onClick={()=>handleLike(cardFocus[1])}></div>
+                </div>)}
         <div
           className="edit-button-wrap"
           onClick={() => updatePost(cardFocus[1])}
@@ -145,9 +176,15 @@ const ProfilePage = ({ user, authenticated }) => {
         <div className="follow-button-wrap2">
           <div className="follow-button" onClick={()=>handleLike(cardFocus[1])}></div>
         </div>
-        <div className="like-button-wrap2">
-          <div className="like-button"></div>
-        </div>
+        {isLiked(cardFocus[1]) !== undefined ? (
+              <div className="like-button-wrap2">
+                  <div className="liked-button" onClick={()=>handleLike(cardFocus[1])}></div>
+                </div>):
+                
+                
+                (<div className="like-button-wrap2">
+                  <div className="like-button" onClick={()=>handleLike(cardFocus[1])}></div>
+                </div>)}
       </div>
     )}
     
@@ -171,9 +208,15 @@ const ProfilePage = ({ user, authenticated }) => {
             <div className="follow-button-wrap">
               <div className="follow-button"></div>
             </div>
-            <div className="like-button-wrap">
-              <div className="like-button" onClick={()=>handleLike(post)}></div>
-            </div>
+            {isLiked(post) !== undefined ? (
+              <div className="like-button-wrap">
+                  <div className="liked-button" onClick={()=>handleLike(post)}></div>
+                </div>):
+                
+                
+                (<div className="like-button-wrap">
+                  <div className="like-button" onClick={()=>handleLike(post)}></div>
+                </div>)}
             <div
               className="edit-button-wrap"
               onClick={() => updatePost(post)}
@@ -192,9 +235,15 @@ const ProfilePage = ({ user, authenticated }) => {
             <div className="follow-button-wrap2">
               <div className="follow-button"></div>
             </div>
-            <div className="like-button-wrap2">
-              <div className="like-button" onClick={()=>handleLike(post)}></div>
-            </div>
+            {isLiked(post) !== undefined ? (
+              <div className="like-button-wrap2">
+                  <div className="liked-button" onClick={()=>handleLike(post)}></div>
+                </div>):
+                
+                
+                (<div className="like-button-wrap2">
+                  <div className="like-button" onClick={()=>handleLike(post)}></div>
+                </div>)}
           </div>
         )}
 

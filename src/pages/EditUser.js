@@ -18,8 +18,6 @@ const Edit = ({ user, authenticated, setUser }) => {
         tempuser.username = formVal.username
         tempuser.bio = formVal.bio
     
-        console.log(tempuser)
-        console.log(user)
         setUser(tempuser) 
         handleSubmit()   
     }
