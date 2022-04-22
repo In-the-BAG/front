@@ -1,0 +1,268 @@
+@font-face {
+    font-family: 'gilroy-extrabold';
+    src: url('../fonts/gilroy-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/gilroy-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'gilroy-light';
+    src: url('../fonts/gilroy-light-webfont.woff') format('woff2'),
+         url('../fonts/gilroy-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+main {
+    min-height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer{
+    font-family: 'gilroy-light';
+    position: fixed;
+    padding: 20px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  background:url('../assets/images/black-paper.png');
+  background-color: rgb(208, 207, 207);
+
+    text-align: center;
+}
+.welcomeNav{
+    float: right;
+    padding: 0px;
+}
+.header{
+  background-color: rgba(225, 219, 219, 0.681);
+  /* background:url('../assets/images/black-paper.png'); */
+  font-size:2.5em;
+  margin-top:50px;
+}
+.create-post-wrap{
+    display: block;
+    text-align: center;
+    top:50%;
+    position:relative;
+}
+
+.input-wrap{
+    padding: 50px 0px 50px 0px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+.input-wrap input{
+    height: 50px;
+    width: 500px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 25px 25px 25px 25px;
+    outline: none;
+    font-size: 2em;
+    text-align: center;
+    caret-color: transparent;
+
+}
+
+
+
+.input-wrap label{
+    padding-left: 20px;
+    outline: none;
+
+    height: 50px;
+    border-radius: 25px 0px 0px 25px;
+    border: 2px rgb(235, 40, 40) solid;
+    background-color: white;
+}
+.input-wrap-register{
+    padding: 0px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+.input-wrap-register input{
+    height: 50px;
+    width: 500px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 10px 10px 10px 10px;
+    outline: none;
+    font-size: 2em;
+    text-align: center;
+    caret-color: auto;
+    margin-top: 5px;
+}
+.input-wrap-register label{
+    padding-left: 20px;
+    outline: none;
+
+    height: 50px;
+    border-radius: 25px 0px 0px 25px;
+    border: 2px rgb(235, 40, 40) solid;
+    background-color: white;
+}
+.edit-button{
+    background-image: url('../assets/images/edit-button.svg');
+    width: 50px;
+    height: 50px;
+    background-color:rgba(0,0,0,0);
+    background-size: cover;
+    padding: 0px;
+    border: none;
+    margin: 0 auto;
+
+}
+.edit-button-wrap{
+    padding: 5px;
+    width: 75px;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
+
+
+}
+.edit-button-wrap:hover{
+    padding: 5px;
+    background-color:rgba(255,0,0,100);
+}
+.buttons{
+    display: flex;
+}
+.del-button{
+    background-image: url('../assets/images/icons8-delete.svg');
+    width: 50px;
+    height: 50px;
+    background-color:rgba(0,0,0,0);
+    background-size: cover;
+    padding: 0px;
+    border: none;
+    margin: 0 auto;
+
+}
+.del-button-wrap{
+    padding: 5px;
+    width: 75px;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
+    
+
+
+}
+.del-button-wrap:hover{
+    padding: 5px;
+    background-color:rgba(255,0,0,100);
+}
+.follow-button{
+    background-image: url('../assets/images/follow.svg');
+    width: 50px;
+    height: 50px;
+    background-color:rgba(0,0,0,0);
+    background-size: cover;
+    padding: 0px;
+    border: none;
+    margin: 0 auto;
+
+    background-position: center;
+
+}
+.follow-button-wrap{
+    padding: 5px;
+    width: 75px;
+    align-items: center;
+    align-content: center;
+    background-position: center;
+    margin:0 auto;
+
+
+}
+.follow-button-wrap:hover{
+    padding: 5px;
+    background-color:rgba(255,0,0,100);
+}
+.follow-button-wrap2:hover{
+    padding: 5px;
+    background-color:rgba(255,0,0,100);
+}
+.like-button{
+    background-image: url('../assets/images/heart-outline.svg');
+    width: 53px;
+    height: 50px;
+    background-color:rgba(0,0,0,0);
+    background-size: cover;
+    padding: 0px;
+    border: none;
+    margin: 0 auto;
+    background-position: center;
+
+}
+.like-button-wrap{
+    padding: 5px;
+    width: 75px;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
+
+
+}
+.like-button-wrap:hover{
+    padding: 5px;
+    background-color:rgba(255,0,0,100);
+}
+.like-button-wrap2:hover{
+    padding: 5px;
+    background-color:rgba(255,0,0,100);
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+
+    width: 100%;
+    margin: 0 auto;
+    align-content: center;
+    position: relative;
+}
+.like-button-wrap2{
+    padding: 5px;
+    width: 150px;
+    align-items: center;
+    align-content: center;
+
+}
+.follow-button-wrap2{
+    padding: 5px;
+    width: 150px;
+    align-items: center;
+    align-content: center;
+    background-position: center;
+
+
+}
+.focuscard{
+    background-color: rgba(0, 0, 0, 0.29);
+    margin: 0 auto;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+
+    display: flex;
+    flex-flow: column;
+    width: 50%;
+}
+
+.bigImage{
+    width:min-content;
+    height: auto;
+    contain: content;
+}
+.bigDesc{
+    width: 90%;
+    height: auto;
+    position: relative;
+
+}
