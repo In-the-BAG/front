@@ -28,7 +28,12 @@ const Comments = (props) => {
 
         const handleSubmit = async(e) => {
             e.preventDefault()
-            const payload = await CreateComment({...form,  userid: props.userid, postid: props.postid})
+
+            console.log(`USER ID ${props.userid}  POST ID ${props.postid}`)
+            let stuff = {...form,  userid: props.userid, postid: props.postid}
+            console.log(`USER ID ${stuff.userid}  POST ID ${stuff.postid}`)
+
+            const payload = await CreateComment(stuff)
             console.log(payload)
         }
 

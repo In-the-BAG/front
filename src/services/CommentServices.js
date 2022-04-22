@@ -10,9 +10,11 @@ export const GetComments = async () => {
     }
   }
 
-  export const CreateComment = async (data, postid, userid) => {
+  export const CreateComment = async (data) => {
     try {
-      const res = await Client.post(`/comments/create/${userid}/${postid}`, data)
+
+      console.log(`user ${data.userid} post ${data.postid} data ${data.description}`)
+      const res = await Client.post(`/comments/create/${data.userid}/${data.postid}`, data)
       return res.data 
     } catch (error){
       throw error

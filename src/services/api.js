@@ -1,7 +1,7 @@
 import Axios from 'axios'
 
-//export const BASE_URL = 'https://travelbag2sei222.herokuapp.com/'
-export const BASE_URL = 'http://localhost:3023/'
+export const BASE_URL = 'https://travelbag2sei222.herokuapp.com/'
+// export const BASE_URL = 'http://localhost:3023/'
 
 const Client = Axios.create({ baseURL: BASE_URL })
 
