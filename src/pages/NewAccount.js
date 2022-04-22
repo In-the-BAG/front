@@ -10,7 +10,7 @@ const NewAccount = () =>{
         firstname:"",
         lastname:"",
         email:"",
-        image: "",
+        image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg?20200418092106",
         bio: "",
         password:"",
         passwordCheck:"",
@@ -123,27 +123,6 @@ const NewAccount = () =>{
                 />
                 </div>
 
-                <div className="input-wrap-register">
-                <input
-                autoComplete='https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg'
-                onChange={handleChange}
-                name="image"
-                type="text"
-                placeholder="Profile Picture URL"
-                value={formVal.image}
-                />
-                </div>
-
-                <div className="input-wrap-register">
-                <input
-               
-                onChange={handleChange}
-                name="bio"
-                type="text"
-                placeholder="Add a bio"
-                value={formVal.bio}
-                />
-                </div>
                 
                
                 <button
