@@ -1,7 +1,7 @@
-# The TravelGram FrontEnd
+# The Travelbag FrontEnd
 
 ## Summary
-If you've ever thought about traveling, you've probably wondered where you should go, what destination is trending, or where your friends are going right? Fear no more, because we've got the site for you! Here we present to you Travelgram! This is hottest site to either check on your friends, plan a nice little honeymoon, or even a weekend away from the kids. Ah, we all need that once in a while. Here you'll be able to post up what's your next dream vacation, and connect to hundreds of people just like you, who are all getting ideas for their next trip, or taking you on the adventure with them! 
+If you've ever thought about traveling, you've probably wondered where you should go, what destination is trending, or where your friends are going right? Fear no more, because we've got the site for you! Here we present to you Travelbag! This is hottest site to either check on your friends, plan a nice little honeymoon, or even a weekend away from the kids. Ah, we all need that once in a while. Here you'll be able to post up what's your next dream vacation, and connect to hundreds of people just like you, who are all getting ideas for their next trip, or taking you on the adventure with them! 
 
 ## Back-End
 
