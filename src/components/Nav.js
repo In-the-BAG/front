@@ -82,15 +82,31 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
       );
     }
     let publicOptions = (
-      
-      <div className="welcomeNav">
+      <header>
+      <div className="header">
 
         <nav className="navigation">
-            <Link to="/createAccount">Create Account</Link>
-            <Link to="/login"> Login </Link>
-            <Link to= "/explore"> Explore </Link>
+          <ul className="list">
+            <li className="navLinks">
+              <Link to="/">
+                <div className="logo-wrapper" alt="logo">
+                  <img className="logo" src={Logo} alt="ITB Logo" />
+                </div>
+              </Link>
+            </li>  
+            <li className="navLinks">
+              <Link className="navLinks" to="/login"> Login </Link>
+            </li> 
+            <li className="navLinks">
+              <Link className="navLinks" to= "/explore"> Explore </Link>
+            </li>  
+            <li className="navLinks">
+              <Link className="navLinks" to="/createAccount">Create Account</Link>
+            </li>  
+          </ul>  
         </nav>
         </div>
+        </header>
         )
 
 
