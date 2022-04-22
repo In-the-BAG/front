@@ -231,6 +231,13 @@ img {
         height: 20em;
         width: 20em;
     }
+    .profile-image,
+    .profile-user-settings,
+    .profile-bio,
+    .profile-stats {
+        float: none;
+        width: auto;
+    }
     
 }
 
@@ -257,6 +264,7 @@ img {
         height: 30em;
         margin-left: -3em;
     }
+    
     
     
 }
