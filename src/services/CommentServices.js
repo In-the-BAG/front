@@ -27,3 +27,12 @@ export const GetPostComments = async (postid) => {
     throw error
   }
 }
+
+export const DeleteComment = async (data) => {
+  try {
+    const res = await Client.delete(`/comments/${data.id}`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
