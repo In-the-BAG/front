@@ -56,7 +56,7 @@ const Comments = (props) => {
                 >Add comment</button>
             </form>
   
-            {comments.map((comment) => (
+            {comments.slice('').reverse().map((comment) => (
                 <div className="comment-single" key={comment.id}>
                     {/* <div>  {comment.userid} </div> */}
                 <div>{comment.description}</div>

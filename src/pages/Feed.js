@@ -133,7 +133,7 @@ const Feed = ({user, authenticated}) => {
           </div>
         ) : (
           <div>
-            {posts.reverse().map((post) => (
+            {posts.slice('').reverse().map((post) => (
               <div
                 className="posts-in"
                 key={post.id}
